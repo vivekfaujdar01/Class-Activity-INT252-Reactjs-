@@ -2,6 +2,9 @@ import React from 'react'
 import './App.css'
 import Home from './component/Home'
 import Counter from './component/counter.jsx'
+import Stateless from './stateless.jsx'
+import EffectHookExample from './EffectHook.jsx'
+import ToggleByButton from './ToggleByButton.jsx'
 function App() {
  
 //   const element = React.createElement(
@@ -13,16 +16,19 @@ function App() {
 // );
 // diffing algorithm is used to compare two versions of a virtual DOM tree and determine the minimum number of changes needed to update the real DOM to match the new virtual DOM.
 // reconciliation is the process of updating the real DOM to reflect changes in the virtual DOM after the diffing algorithm has identified what needs to be changed.
-const info = {
-  name: "John Doe",
-  age: 30,
-  occupation: "Software Developer"
-};        
+// const info = {
+//   name: "John Doe",
+//   age: 30,
+//   occupation: "Software Developer"
+// };        
   return (
     <>
-      <Home information = {info} />
-      {/* {element} */}
-      <Counter />
+      {/* <Home information = {info} />
+      {element} */}
+      {/* <Counter /> */}
+      {/* <Stateless title="Hi" onClick={() => alert('clicked')}>Optional children</Stateless> */}
+      {/* <EffectHookExample /> */}
+      <ToggleByButton />
     </>
   )
 }
