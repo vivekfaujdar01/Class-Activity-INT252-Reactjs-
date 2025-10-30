@@ -5,6 +5,7 @@ import Counter from './component/counter.jsx'
 import Stateless from './stateless.jsx'
 import EffectHookExample from './EffectHook.jsx'
 import ToggleByButton from './ToggleByButton.jsx'
+import Stopwatch from './stopwatch.jsx'
 function App() {
  
 //   const element = React.createElement(
@@ -28,7 +29,8 @@ function App() {
       {/* <Counter /> */}
       {/* <Stateless title="Hi" onClick={() => alert('clicked')}>Optional children</Stateless> */}
       {/* <EffectHookExample /> */}
-      <ToggleByButton />
+      {/* <ToggleByButton /> */}
+      <Stopwatch />
     </>
   )
 }
