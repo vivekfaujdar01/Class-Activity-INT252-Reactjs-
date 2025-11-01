@@ -6,6 +6,9 @@ import Stateless from './stateless.jsx'
 import EffectHookExample from './EffectHook.jsx'
 import ToggleByButton from './ToggleByButton.jsx'
 import Stopwatch from './stopwatch.jsx'
+import Functional from './component/functional.jsx'
+import Component from './component/props.jsx'
+import Quote from './component/Quote.jsx'
 function App() {
  
 //   const element = React.createElement(
@@ -22,6 +25,7 @@ function App() {
 //   age: 30,
 //   occupation: "Software Developer"
 // };        
+// const message = "Hello, React learners!";
   return (
     <>
       {/* <Home information = {info} />
@@ -30,7 +34,11 @@ function App() {
       {/* <Stateless title="Hi" onClick={() => alert('clicked')}>Optional children</Stateless> */}
       {/* <EffectHookExample /> */}
       {/* <ToggleByButton /> */}
-      <Stopwatch />
+      {/* <Stopwatch /> */}
+        {/* <Functional /> */}
+        {/* <Component name="Vivek" />
+        <Component name="Satish" /> */}
+        <Quote />
     </>
   )
 }
