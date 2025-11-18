@@ -8,6 +8,8 @@ import ToggleByButton from './ToggleByButton.jsx'
 import Stopwatch from './stopwatch.jsx'
 import Functional from './component/functional.jsx'
 import Component from './component/props.jsx'
+import Task from './task.jsx'
+import UseRef from './UseRef.jsx'
 // import Quote from './component/Quote.jsx'
 function App() {
  
@@ -20,25 +22,27 @@ function App() {
 // );
 // diffing algorithm is used to compare two versions of a virtual DOM tree and determine the minimum number of changes needed to update the real DOM to match the new virtual DOM.
 // reconciliation is the process of updating the real DOM to reflect changes in the virtual DOM after the diffing algorithm has identified what needs to be changed.
-const info = {
-  name: "Vivek",
-  age: 19,
-  occupation: "Software Developer"
-};        
+// const info = {
+//   name: "Vivek",
+//   age: 19,
+//   occupation: "Software Developer"
+// };        
 // const message = "Hello, React learners!";
   return (
     <>
-      <Home information = {info} />
+      {/* <Home information = {info} /> */}
       {/* {element} */}
       {/* <Counter /> */}
       {/* <Stateless title="Hi" onClick={() => alert('clicked')}>Optional children</Stateless> */}
       {/* <EffectHookExample /> */}
-      <ToggleByButton />
+      {/* <ToggleByButton /> */}
       {/* <Stopwatch /> */}
         {/* <Functional /> */}
         {/* <Component name="Vivek" />
         <Component name="Satish" /> */}
         {/* <Quote /> */}
+        <Task />
+        <UseRef />
     </>
   )
 }
