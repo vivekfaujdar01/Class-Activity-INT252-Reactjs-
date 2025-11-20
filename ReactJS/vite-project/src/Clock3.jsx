@@ -10,7 +10,7 @@ export default function Clock3() {
                 clock < 16 && <p className="text-lg mb-6">Current Clock: {clock}</p> 
             } 
             {
-                clock > 15 && <h2 className="text-2xl font-semibold text-green-700">{message3}</h2>
+                clock > 14 && <h2 className="text-2xl font-semibold text-green-700">{message3}</h2>
             }
         </div>
     );

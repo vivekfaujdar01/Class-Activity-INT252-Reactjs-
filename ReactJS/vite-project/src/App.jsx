@@ -24,12 +24,15 @@ function App() {
   const message2 = "Welcome to the world of React.";
   const message3 = "Let's build something amazing together!";
   useEffect(() => {
+    if (clock >= 15) {
+        return; // Stop the effect when clock reaches 15
+    }
         const interval = setInterval(() => {
             setClock(prevClock => prevClock + 1);
         }, 1000);
 
         return () => clearInterval(interval);
-    }, [setClock]);
+    }, [setClock, clock]);
   // const [theme, setTheme] = React.useState('light');
 //   const element = React.createElement(
 //   'div',                       // parent element type
