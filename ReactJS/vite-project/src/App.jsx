@@ -9,7 +9,7 @@ import Stopwatch from './stopwatch.jsx'
 import Functional from './component/functional.jsx'
 import Component from './component/props.jsx'
 import Task from './task.jsx'
-// import UseRef from './UseRef.jsx'
+import UseRef from './UseRef.jsx'
 import ThemeContext from './component/ThemeContext.jsx'
 import ContextApi from './ContextApi.jsx'
 // import Clock from './Clock.jsx'
@@ -62,8 +62,8 @@ function App() {
       {/* <Component name="Vivek" />
       <Component name="Satish" /> */}
       {/* <Quote /> */}
-      {/* <Task />
-      <UseRef /> */}
+      {/* <Task />*/}
+      <UseRef /> 
 
       {/* <ThemeContext.Provider value={{theme, setTheme}}>
         <Home />

@@ -1,45 +1,73 @@
-// import {useEffect, useRef, useState} from "react";
+import React, { useRef,useState, useEffect } from "react";
+// USE CASE 1: Accessing DOM Elements (Most Common)
+// Example: Automatically focus on an input box when the page loads
 
 // export default function UseRef() {
-    
-//     // const reff = useRef(0);
-//     // const handler=()=>{
-//     //     reff.current=reff.current+1;
-//     //     console.log(reff.current);
-//     // }
-//     // return (
-//     //     <>
-//     //         <h1 className="">{reff.current}</h1>
-//     //         <button className="bg-yellow-300" onClick={handler}>btn</button>
-//     //     </>
-//     // )
+//   const inputRef = useRef(null);
 
-//     // const [count, setCount] = useState(0);
-//     const reff = useRef(null);
-//     let val = 0;
-//     const handler = () => {
-//         val = val + 1;
-//         count.current.innerText = val;
-//         // reff.current.focus();
-//         // setCount(count + 1);
-//     };
+//   useEffect(() => {
+//     inputRef.current.focus();   // Access DOM element
+//   }, []);
 
-//     const count = useRef(null);
-
-//     // useEffect(() => {
-//     //     reff.current = count;
-//     // },[count]);
-//     return (
-//         <>
-//             {/* <h1>curret value : {count}</h1>
-//             <h1>prev val: {reff.current}</h1>
-//             <button onClick={handler} className="bg-amber-300">btn</button> */}
-//             {" "}
-//             <div className="flex flex-col justify-center items-center h-screen">
-//                 <input type="text" ref = {reff} placeholder="type here..." className="border-1 rounded-2xl p-2 m-2" />
-//                 <h1 ref={count}>current value:  {val}</h1>
-//                 <button onClick = {handler} className="bg-blue-400 font-bold border-2">btn</button>
-//             </div>
-//         </>
-//     )
+//   return (
+//     <div>
+//       <h2>Auto Focus Input</h2>
+//       <input ref={inputRef} type="text" placeholder="Type here..." />
+//     </div>
+//   );
 // }
+
+// USE CASE 2: Storing Values Without Re-rendering
+// Example: A counter that updates internally without causing UI updates.
+
+    // export default function UseRef() {
+    //   const countRef = useRef(0);
+    //   const [renderCount, setRenderCount] = useState(0);
+
+    //   const increase = () => {
+    //     countRef.current++;
+    //     console.log("Count:", countRef.current);
+    //   };
+
+    //   return (
+    //     <div>
+    //       <h2>useRef Counter</h2>
+    //       <p>Render Count: {renderCount}</p>
+
+    //       <button onClick={increase} className="bg-blue-300 m-3">Increase ref Counter</button>
+
+    //       <button onClick={() => setRenderCount(e => e + 1)} className="bg-green-300">
+    //         Rerender Component
+    //       </button>
+    //     </div>
+    //   );
+    // }
+
+// USE CASE 3: Storing Previous Value
+// Example: Show previous state vs current state.
+
+// /
+
+// USE CASE 4: Managing Timers (setInterval / setTimeout)
+
+export default function UseRef() {
+  const timerRef = useRef(null);
+
+  const startTimer = () => {
+    timerRef.current = setInterval(() => {
+      console.log("Timer running...");
+    }, 1000);
+  };
+
+  const stopTimer = () => {
+    clearInterval(timerRef.current);
+  };
+
+  return (
+    <div>
+      <h2>Timer with useRef</h2>
+      <button onClick={startTimer}>Start</button>
+      <button onClick={stopTimer}>Stop</button>
+    </div>
+  );
+}
