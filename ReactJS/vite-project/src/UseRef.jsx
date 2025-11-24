@@ -46,28 +46,45 @@ import React, { useRef,useState, useEffect } from "react";
 // USE CASE 3: Storing Previous Value
 // Example: Show previous state vs current state.
 
-// /
-
-// USE CASE 4: Managing Timers (setInterval / setTimeout)
-
 export default function UseRef() {
-  const timerRef = useRef(null);
+  const [count, setCount] = useState(0);
+  const previousCount = useRef();
 
-  const startTimer = () => {
-    timerRef.current = setInterval(() => {
-      console.log("Timer running...");
-    }, 1000);
-  };
-
-  const stopTimer = () => {
-    clearInterval(timerRef.current);
-  };
+  useEffect(() => {
+    previousCount.current = count; // store previous value
+  });
 
   return (
     <div>
-      <h2>Timer with useRef</h2>
-      <button onClick={startTimer}>Start</button>
-      <button onClick={stopTimer}>Stop</button>
+      <h2>Previous Value Example</h2>
+      <p>Current Count: {count}</p>
+      <p>Previous Count: {previousCount.current}</p>
+
+      <button onClick={() => setCount(count + 1)}>Increase</button>
     </div>
   );
 }
+
+// USE CASE 4: Managing Timers (setInterval / setTimeout)
+
+// export default function UseRef() {
+//   const timerRef = useRef(null);
+
+//   const startTimer = () => {
+//     timerRef.current = setInterval(() => {
+//       console.log("Timer running...");
+//     }, 1000);
+//   };
+
+//   const stopTimer = () => {
+//     clearInterval(timerRef.current);
+//   };
+
+//   return (
+//     <div>
+//       <h2>Timer with useRef</h2>
+//       <button onClick={startTimer}>Start</button>
+//       <button onClick={stopTimer}>Stop</button>
+//     </div>
+//   );
+// }
