@@ -20,6 +20,8 @@ import Clock3 from './Clock3.jsx'
 // import Quote from './component/Quote.jsx'
 import Memo from './Memo.jsx';
 import Calculator from './Calcuator.jsx';
+import useToggle from './useToggle.js';
+import Form from './Form.jsx'
 function App() {
   // const [clock, setClock] = useState(0);
   // const message1 = "Hello, React learners!";
@@ -51,6 +53,7 @@ function App() {
 //   occupation: "Software Developer"
 // };        
 // const message = "Hello, React learners!";
+const [isOn, toggle] = useToggle(false);
   return (
     <>
       {/* <Home information = {info} /> */}
@@ -70,17 +73,20 @@ function App() {
       {/* <ThemeContext.Provider value={{theme, setTheme}}>
         <Home />
       </ThemeContext.Provider> */}
-{/* 
+      {/* 
       <ContextApi.Provider value={{clock,message1,message2,message3}}>
         <Clock1 />
         <Clock2 />
         <Clock3 />
       </ContextApi.Provider> */}
 
-      <Memo/>
-      <Calculator/>
+      {/* <Memo/>
+      <Calculator/> */}
+
+      <button onClick={toggle} className="bg-amber-300 p-3 rounded-2xl">{isOn ? "ON" : "OFF"}</button>
+      <Form/>
     </>
-  )
+  );
 }
 
 //props drilling is the process of passing data from a parent component to a deeply nested child component through multiple layers of intermediary components via props.
