@@ -22,6 +22,8 @@ import Memo from './Memo.jsx';
 import Calculator from './Calcuator.jsx';
 import useToggle from './useToggle.js';
 import Form from './Form.jsx'
+import Fetching from './Fetching.jsx';
+// import useFetch from './useFetch.jsx';
 function App() {
   // const [clock, setClock] = useState(0);
   // const message1 = "Hello, React learners!";
@@ -85,6 +87,8 @@ const [isOn, toggle] = useToggle(false);
 
       <button onClick={toggle} className="bg-amber-300 p-3 rounded-2xl">{isOn ? "ON" : "OFF"}</button>
       <Form/>
+      <Fetching/>
+      {/* {useFetch()} */}
     </>
   );
 }
