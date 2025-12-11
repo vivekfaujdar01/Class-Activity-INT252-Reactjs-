@@ -1,61 +1,63 @@
-import React from 'react'
-import './App.css'
-// import Home from './component/Home'
-import Counter from './component/counter.jsx'
-import Stateless from './stateless.jsx'
-import EffectHookExample from './EffectHook.jsx'
-import ToggleByButton from './ToggleByButton.jsx'
-import Stopwatch from './stopwatch.jsx'
-import Functional from './component/functional.jsx'
-import Component from './component/props.jsx'
-import Task from './task.jsx'
-import UseRef from './UseRef.jsx'
-import ThemeContext from './component/ThemeContext.jsx'
-import ContextApi from './ContextApi.jsx'
+import React, { useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Home from "./component/Home";
+import Counter from "./component/counter.jsx";
+import Stateless from "./stateless.jsx";
+import EffectHookExample from "./EffectHook.jsx";
+import ToggleByButton from "./ToggleByButton.jsx";
+import Stopwatch from "./stopwatch.jsx";
+import Functional from "./component/functional.jsx";
+import Component from "./component/props.jsx";
+import Task from "./task.jsx";
+import UseRef from "./UseRef.jsx";
+import ThemeContext from "./component/ThemeContext.jsx";
+import ContextApi from "./ContextApi.jsx";
 // import Clock from './Clock.jsx'
-import Home from './Home.jsx';
-import Clock1 from './Clock1.jsx'
-import Clock2 from './Clock2.jsx'
-import Clock3 from './Clock3.jsx'
+// import Home from './Home.jsx';
+import Clock1 from "./Clock1.jsx";
+import Clock2 from "./Clock2.jsx";
+import Clock3 from "./Clock3.jsx";
 // import Quote from './component/Quote.jsx'
-import Memo from './Memo.jsx';
-import Calculator from './Calcuator.jsx';
-import useToggle from './useToggle.js';
-import Form from './Form.jsx'
-import Fetching from './Fetching.jsx';
+import Memo from "./Memo.jsx";
+import Calculator from "./Calcuator.jsx";
+// import useToggle from './useToggle.js';
+import Form from "./Form.jsx";
+import Fetching from "./Fetching.jsx";
 // import useFetch from './useFetch.jsx';
+import ProductDetails from "./productdetails.jsx";
 function App() {
-  // const [clock, setClock] = useState(0);
-  // const message1 = "Hello, React learners!";
-  // const message2 = "Welcome to the world of React.";
-  // const message3 = "Let's build something amazing together!";
-  // useEffect(() => {
-  //   if (clock >= 15) {
-  //       return; // Stop the effect when clock reaches 15
-  //   }
-  //       const interval = setInterval(() => {
-  //           setClock(prevClock => prevClock + 1);
-  //       }, 1000);
+  const [clock, setClock] = useState(0);
+  const message1 = "Hello, React learners!";
+  const message2 = "Welcome to the world of React.";
+  const message3 = "Let's build something amazing together!";
+  useEffect(() => {
+    if (clock >= 15) {
+      return; // Stop the effect when clock reaches 15
+    }
+    const interval = setInterval(() => {
+      setClock((prevClock) => prevClock + 1);
+    }, 1000);
 
-  //       return () => clearInterval(interval);
-  //   }, [setClock, clock]);
+    return () => clearInterval(interval);
+  }, [setClock, clock]);
   // const [theme, setTheme] = React.useState('light');
-//   const element = React.createElement(
-//   'div',                       // parent element type
-//   { className: 'parent bg-red-500' },      // props
-//   "This is div element",      // child 0
-//   React.createElement('h1', {className: 'text-3xl font-bold underline'}, 'Hello'),            // child 1
-//   React.createElement('p', {className: 'text-base'}, 'This is a child paragraph.') // child 2
-// );
-// diffing algorithm is used to compare two versions of a virtual DOM tree and determine the minimum number of changes needed to update the real DOM to match the new virtual DOM.
-// reconciliation is the process of updating the real DOM to reflect changes in the virtual DOM after the diffing algorithm has identified what needs to be changed.
-// const info = {
-//   name: "Vivek",
-//   age: 19,
-//   occupation: "Software Developer"
-// };        
-// const message = "Hello, React learners!";
-const [isOn, toggle] = useToggle(false);
+  //   const element = React.createElement(
+  //   'div',                       // parent element type
+  //   { className: 'parent bg-red-500' },      // props
+  //   "This is div element",      // child 0
+  //   React.createElement('h1', {className: 'text-3xl font-bold underline'}, 'Hello'),            // child 1
+  //   React.createElement('p', {className: 'text-base'}, 'This is a child paragraph.') // child 2
+  // );
+  // diffing algorithm is used to compare two versions of a virtual DOM tree and determine the minimum number of changes needed to update the real DOM to match the new virtual DOM.
+  // reconciliation is the process of updating the real DOM to reflect changes in the virtual DOM after the diffing algorithm has identified what needs to be changed.
+  const info = {
+    name: "Vivek",
+    age: 19,
+    occupation: "Software Developer",
+  };
+  // const message = "Hello, React learners!";
+  // const [isOn, toggle] = useToggle(false);
   return (
     <>
       {/* <Home information = {info} /> */}
@@ -85,13 +87,34 @@ const [isOn, toggle] = useToggle(false);
       {/* <Memo/>
       <Calculator/> */}
 
-      <button onClick={toggle} className="bg-amber-300 p-3 rounded-2xl">{isOn ? "ON" : "OFF"}</button>
+      {/* <button onClick={toggle} className="bg-amber-300 p-3 rounded-2xl">{isOn ? "ON" : "OFF"}</button>
       <Form/>
-      <Fetching/>
+      <Fetching/> */}
       {/* {useFetch()} */}
+      <BrowserRouter>
+        <ContextApi.Provider value={{ clock, message1, message2, message3 }}>
+          <Routes>
+            <Route path="/" element={<Home information={info} />} />
+            <Route path="/products/:id" element={<ProductDetails />} />
+            <Route
+              path="/clock1"
+              element={
+                <>
+                  <Clock1 />
+                  {/* <Clock2 />
+                  <Clock3 />   */}
+                </>
+              }
+            ></Route>
+            {/* <Route path="/clock1" element={<Clock1 />} />
+            <Route path="/clock1" element={<Clock2 />} />
+            <Route path="/clock1" element={<Clock3 />} /> */}
+          </Routes>
+        </ContextApi.Provider>
+      </BrowserRouter>
     </>
   );
 }
 
 //props drilling is the process of passing data from a parent component to a deeply nested child component through multiple layers of intermediary components via props.
-export default App
+export default App;
