@@ -1,0 +1,246 @@
+/* TodoList Component Styles */
+
+.container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title {
+    text-align: center;
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 10px rgba(99, 102, 241, 0.3);
+}
+
+.form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: 2px solid #334155;
+    border-radius: 12px;
+    background: #1e293b;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.input::placeholder {
+    color: #64748b;
+}
+
+.addButton {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.addButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+}
+
+.statsBar {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.stat {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.filterBar {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.filterButton {
+    padding: 0.5rem 1.5rem;
+    border: 2px solid #334155;
+    border-radius: 8px;
+    background: transparent;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filterButton:hover {
+    border-color: #6366f1;
+    color: #fff;
+}
+
+.filterButton.active {
+    background: #6366f1;
+    border-color: #6366f1;
+    color: white;
+}
+
+.actionBar {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.toggleAllButton {
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 1px solid #4ade80;
+    color: #4ade80;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggleAllButton:hover {
+    background: #4ade80;
+    color: #0f172a;
+}
+
+.clearButton {
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 1px solid #ef4444;
+    color: #ef4444;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.clearButton:hover {
+    background: #ef4444;
+    color: white;
+}
+
+.todoList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.todoItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.todoItem:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.todoItem.completed {
+    opacity: 0.6;
+}
+
+.todoItem.completed .todoText {
+    text-decoration: line-through;
+    color: #64748b;
+}
+
+.checkbox {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    accent-color: #6366f1;
+}
+
+.todoText {
+    flex: 1;
+    color: #e2e8f0;
+    font-size: 1rem;
+}
+
+.deleteButton {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.todoItem:hover .deleteButton {
+    opacity: 1;
+}
+
+.deleteButton:hover {
+    background: #ef4444;
+    color: white;
+}
+
+.emptyState {
+    text-align: center;
+    padding: 2rem;
+    color: #64748b;
+    font-style: italic;
+}
+
+.infoBox {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 12px;
+    border-left: 4px solid #6366f1;
+}
+
+.infoBox h3 {
+    color: #a5b4fc;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.infoBox ul {
+    margin: 0;
+    padding-left: 1.5rem;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.infoBox li {
+    margin-bottom: 0.5rem;
+}
+
+.infoBox strong {
+    color: #c4b5fd;
+}
